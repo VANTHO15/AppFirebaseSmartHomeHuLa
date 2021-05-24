@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cần Điền Tất Cả Các Mục"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:fontFamily="@font/dancing"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:textColor="#e67e22"
+            >
+        </TextView>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_edDiaChiEmailDangKy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            >
+            <EditText
+                android:id="@+id/edDiaChiEmailDK"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Tài Khoản"
+                >
+            </EditText>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_edMatKhauDangKy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            >
+            <EditText
+                android:id="@+id/edMatKhauDK"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mật Khẩu"
+                android:padding="18dp"
+                >
+            </EditText>
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mật Khẩu Gồm 6 Ký Tự 1 Chũ Hoa và 1 Chữ Số"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/dancing"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            >
+        </TextView>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_edNhapLaimatKhauDangKy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            >
+            <EditText
+                android:id="@+id/edNhapLaiMatKhauDK"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nhập Lại Mật Khẩu"
+                android:padding="18dp"
+                >
+            </EditText>
+        </com.google.android.material.textfield.TextInputLayout>
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/sw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:checked="true"
+            android:text="Bạn Là Thành Viên Nhóm"
+            android:textStyle="bold"
+            android:fontFamily="@font/dancing"
+            android:textSize="18dp"
+
+            >
+        </androidx.appcompat.widget.SwitchCompat>
+        <Button
+            android:id="@+id/btnDangKi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Đăng Ký"
+            android:textSize="18dp"
+            android:textColor="#fff"
+            android:layout_margin="10dp"
+            android:padding="15dp"
+            android:backgroundTint="#d63031"
+            >
+        </Button>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hoặc Đăng Ký Bằng"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/dancing"
+            android:textSize="18dp"
+            android:textStyle="bold"
+
+            >
+        </TextView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnDangNhapfacebookDK"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/facebookiconsmall"
+                android:text="Facebook"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:background="@drawable/vienfacebook"
+                android:textColor="@color/colorfacebook"
+                >
+            </androidx.appcompat.widget.AppCompatButton>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnDangNhapGoogleDK"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/googleplussmall"
+                android:layout_weight="1"
+                android:text="Google"
+                android:layout_margin="10dp"
+                android:textColor="@color/colorgoogle"
+                android:background="@drawable/viengg"
+
+                >
+            </androidx.appcompat.widget.AppCompatButton>
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

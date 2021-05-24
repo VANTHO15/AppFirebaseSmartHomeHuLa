@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "299066867445",
+    "project_id": "hulasmarthome",
+    "storage_bucket": "hulasmarthome.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299066867445:android:a0dd0127faae84a729cfbc",
+        "android_client_info": {
+          "package_name": "com.nguyenvantho.a42tho_tabhost_viewpager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299066867445-pbqpdrls9uvvu85gilnupkpc5chh61fi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nguyenvantho.a42tho_tabhost_viewpager",
+            "certificate_hash": "d56f8bb3951fe05b661cddc48ceb2ccf7291a5db"
+          }
+        },
+        {
+          "client_id": "299066867445-hb20biivhqtpqb2otjpapk0a1atvippv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2euN8izWNalHaw0y6YRqRsEY810r3evI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299066867445-hb20biivhqtpqb2otjpapk0a1atvippv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

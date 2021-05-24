@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="capfale" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+    </style>
+    <style name="changecolordrawertoggle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@color/colorwhite</item>
+    </style>
+
+
+</resources>

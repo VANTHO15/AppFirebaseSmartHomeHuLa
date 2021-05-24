@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape
+            android:shape="rectangle"
+            >
+            <stroke
+                android:width="5dp"
+                android:color="#17BDAA"
+                >
+            </stroke>
+            <corners
+                android:radius="15dp"
+                >
+            </corners>
+            <solid
+                android:color="#257FA8"
+                >
+
+            </solid>
+        </shape>
+
+    </item>
+
+    <item>
+        <inset
+            android:drawable="@drawable/quaton"
+            >
+        </inset>
+    </item>
+
+
+
+
+</layer-list>

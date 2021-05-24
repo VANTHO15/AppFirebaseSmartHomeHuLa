@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape
+            android:shape="rectangle"
+            >
+            <stroke
+                android:width="12dp"
+                android:color="#17BDAA"
+                >
+            </stroke>
+            <corners
+                android:radius="20dp"
+                >
+            </corners>
+            <solid
+                android:color="#C8A12C"
+                >
+
+            </solid>
+        </shape>
+
+    </item>
+
+    <item>
+        <inset
+            android:drawable="@drawable/icon_doam"
+            android:inset="10dp"
+            >
+        </inset>
+    </item>
+
+
+
+
+</layer-list>
