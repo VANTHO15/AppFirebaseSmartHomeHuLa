@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -22,9 +24,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.nguyenvantho.a42tho_tabhost_viewpager.R;
 
-public class Fragment1 extends Fragment implements CompoundButton.OnCheckedChangeListener {
+public class Fragment1 extends Fragment implements CompoundButton.OnCheckedChangeListener, View.OnClickListener {
     TextView txtQuat,txtCua,txtRem,txtNhietDo,txtKhiGa;
     ToggleButton tgQuat,tgCua,tgRem,tgDenKhach,tgDenNgu,tgDenBep;
+    RadioGroup rgchedo;
+    RadioButton rbtudong,rbdieukhien;
+    String TuDong="OFF";
 
     @Nullable
     @Override
@@ -42,6 +47,10 @@ public class Fragment1 extends Fragment implements CompoundButton.OnCheckedChang
         tgDenBep= view.<ToggleButton>findViewById(R.id.tgDenBep);
         txtNhietDo= view.<TextView>findViewById(R.id.tvnhietdo);
         txtKhiGa= view.<TextView>findViewById(R.id.tvKhiGa);
+        rgchedo= view.<RadioGroup>findViewById(R.id.rgchedo);
+        rbtudong= view.<RadioButton>findViewById(R.id.rbtudong);
+        rbdieukhien= view.<RadioButton>findViewById(R.id.rbdieukhien);
+
 
         tgQuat.setOnCheckedChangeListener(this);
         tgCua.setOnCheckedChangeListener(this);
@@ -49,9 +58,12 @@ public class Fragment1 extends Fragment implements CompoundButton.OnCheckedChang
         tgDenKhach.setOnCheckedChangeListener(this);
         tgDenNgu.setOnCheckedChangeListener(this);
         tgDenBep.setOnCheckedChangeListener(this);
+        rbtudong.setOnClickListener(this);
+        rbdieukhien.setOnClickListener(this);
 
         ///// đọc nhiệt độ và khí ga
         ReadDataToFirebase();
+
 
         return view;
     }
@@ -160,7 +172,145 @@ public class Fragment1 extends Fragment implements CompoundButton.OnCheckedChang
     }
     void ReadDataToFirebase()
     {
-        DatabaseReference NhietDoData,KhiGaData;
+        DatabaseReference NhietDoData,KhiGaData,CuaData,DenBepData,DenKhachData,DenNguData,QuatData,RemData;
+        ///////////////////////DenNguData
+        DenNguData = FirebaseDatabase.getInstance().getReference("DenNgu");
+        DenNguData.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String dulieu= (String) snapshot.getValue();
+                if(TuDong.equals("ON"))
+                {
+                    if(dulieu.equals("ON"))
+                    {
+                        tgDenNgu.setChecked(true);
+                    }
+                    else
+                    {
+                        tgDenNgu.setChecked(false);
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+        ///////////////////////DenKhachData
+        DenKhachData = FirebaseDatabase.getInstance().getReference("DenKhach");
+        DenKhachData.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String dulieu= (String) snapshot.getValue();
+                if(TuDong.equals("ON"))
+                {
+                    if(dulieu.equals("ON"))
+                    {
+                        tgDenKhach.setChecked(true);
+                    }
+                    else
+                    {
+                        tgDenKhach.setChecked(false);
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+        ///////////////////////DenBepData
+        DenBepData = FirebaseDatabase.getInstance().getReference("DenBep");
+        DenBepData.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String dulieu= (String) snapshot.getValue();
+                if(TuDong.equals("ON"))
+                {
+                    if(dulieu.equals("ON"))
+                    {
+                        tgDenBep.setChecked(true);
+                    }
+                    else
+                    {
+                        tgDenBep.setChecked(false);
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+        ///////////////////////RemData
+        RemData = FirebaseDatabase.getInstance().getReference("Rem");
+        RemData.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String dulieu= (String) snapshot.getValue();
+                if(TuDong.equals("ON"))
+                {
+                    if(dulieu.equals("ON"))
+                    {
+                        txtRem.setText("Rèm Mở    ");
+                        tgRem.setChecked(true);
+                    }
+                    else
+                    {
+                        txtRem.setText("Rèm Đóng");
+                        tgRem.setChecked(false);
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+        ///////////////////////QuatData
+        QuatData = FirebaseDatabase.getInstance().getReference("Quat");
+        QuatData.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String dulieu= (String) snapshot.getValue();
+                if(TuDong.equals("ON"))
+                {
+                    if(dulieu.equals("ON"))
+                    {
+                        txtQuat.setText("Quạt Bật");
+                        tgQuat.setChecked(true);
+                    }
+                    else
+                    {
+                        txtQuat.setText("Quạt Tắt");
+                        tgQuat.setChecked(false);
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+        ///////////////////////CuaData
+        CuaData = FirebaseDatabase.getInstance().getReference("Cua");
+        CuaData.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String dulieu= (String) snapshot.getValue();
+                if(TuDong.equals("ON"))
+                {
+                    if(dulieu.equals("ON"))
+                    {
+                        txtCua.setText("Cửa Mở    ");
+                        tgCua.setChecked(true);
+                    }
+                    else
+                    {
+                        txtCua.setText("Cửa Đóng");
+                        tgCua.setChecked(false);
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
         ///////////////////////Nhiệt độ
         NhietDoData = FirebaseDatabase.getInstance().getReference("NhietDo");
         NhietDoData.addValueEventListener(new ValueEventListener() {
@@ -183,14 +333,34 @@ public class Fragment1 extends Fragment implements CompoundButton.OnCheckedChang
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String dulieu= (String) snapshot.getValue();
                 txtKhiGa.setText(dulieu+" %");
-
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
+
     }
 
+    @Override
+    public void onClick(View v) {
+        int id=v.getId();
+        switch (id)
+        {
+            case R.id.rbdieukhien:
+            {
+                TuDong="OFF";
+                WriteDataToFirebase("TuDong" ,  "OFF");
+                Toast.makeText(getActivity(),"Điều khiển !",Toast.LENGTH_SHORT).show();
+                break;
+            }
+            case R.id.rbtudong:
+            {
+                TuDong="ON";
+                WriteDataToFirebase("TuDong" ,  "ON");
+                Toast.makeText(getActivity(),"Tự Động!",Toast.LENGTH_SHORT).show();
+                break;
+            }
+        }
+    }
 }

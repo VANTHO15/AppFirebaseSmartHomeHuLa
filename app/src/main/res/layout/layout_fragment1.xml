@@ -7,11 +7,42 @@
     android:background="@drawable/background_mdpi"
     android:orientation="vertical"
     >
+    <RadioGroup
+        android:id="@+id/rgchedo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_gravity="center"
+        >
+        <RadioButton
+            android:id="@+id/rbdieukhien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Điều Khiển"
+            android:textColor="#FFF"
+            android:textSize="20dp"
+            android:padding="10dp"
+            android:checked="true"
+            android:button="@drawable/custom_chedo"
+            >
+        </RadioButton>
+        <RadioButton
+            android:id="@+id/rbtudong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tự Động"
+            android:textColor="#FFF"
+            android:textSize="20dp"
+            android:padding="10dp"
+            android:button="@drawable/custom_chedo"
+            >
+        </RadioButton>
+    </RadioGroup>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         >
         <LinearLayout
             android:layout_width="wrap_content"
@@ -74,7 +105,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         >
         <ToggleButton
             android:id="@+id/tgquat"
@@ -122,7 +153,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         >
         <ToggleButton
             android:id="@+id/tgrem"
@@ -171,7 +202,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         >
         <ToggleButton
             android:id="@+id/tgCua"
